@@ -1,0 +1,31 @@
+@charset "utf-8";
+//--------------------------------------------------------------------------------
+// Slider Style
+//--------------------------------------------------------------------------------
+
+// Desktop Width
+//--------------------------------------------------
+.slider {
+  .slider__inner {
+    margin: 0 auto;
+    overflow: hidden;
+    position: relative;
+    &::after {
+      content: "";
+      display: block;
+      padding-top: 79%; //比率
+    }
+    img {
+      top: 0;
+      left: 0;
+      position: absolute;
+      width: 100%;
+    }
+  }
+}
+
+// SmartPhone Width
+//--------------------------------------------------
+
+@media #{$smartPhone} {
+}

@@ -1,0 +1,46 @@
+@charset "utf-8";
+//--------------------------------------------------------------------------------
+// Modal Style
+//--------------------------------------------------------------------------------
+.modalOpen {
+  cursor: pointer;
+}
+.modalArea {
+  display: none;
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 99999;
+  background: rgba(0, 0, 0, 0.8);
+  overflow: auto;
+  .modalArea__inner {
+    padding: 40px;
+    width: 100%;
+    max-width: 1120px;
+    margin: 0 auto;
+    position: relative;
+    > div {
+      background: #fff;
+      padding: 20px;
+      overflow: scroll;
+      .modalClose {
+        width: 34px;
+        height: 34px;
+        background-image: url(images/modalClose.png);
+        background-size: contain;
+        position: absolute;
+        top: 23px;
+        right: 23px;
+        background-color: transparent;
+        cursor: pointer;
+      }
+    }
+  }
+}
+
+@media #{$tablet} {
+}
+
+@media #{$smartPhone} {
+}

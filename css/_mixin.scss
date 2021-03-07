@@ -1,0 +1,67 @@
+@charset "utf-8";
+//--------------------------------------------------------------------------------
+// Mixin
+//--------------------------------------------------------------------------------
+// Font Size
+@mixin fontSize($size) {
+  font-size: $size + px;
+  font-size: ($size / 16) * 1rem;
+}
+
+// Line-Heightの上の余白消す
+@mixin lineHeightErase($line-height) {
+  &::before {
+    display: block;
+    width: 0;
+    height: 0;
+    margin-top: calc((1 - #{$line-height}) * 0.5em);
+    content: "";
+  }
+  &::after {
+    display: block;
+    width: 0;
+    height: 0;
+    margin-bottom: calc((1 - #{$line-height}) * 0.5em);
+    content: "";
+  }
+}
+
+// Transition
+@mixin transition($sec) {
+  transition: all $sec + s ease;
+}
+
+//linkIcon
+@mixin icon($fileName, $width, $height) {
+  background: url($path_img + $fileName);
+  background-repeat: no-repeat;
+  background-position: 100% center;
+  background-size: $width $height;
+  width: $width;
+  height: $height;
+}
+
+//centering
+@mixin center($direction) {
+  position: absolute;
+  @if $direction==xy {
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  } @else if $direction==x {
+    left: 50%;
+    transform: translateX(-50%);
+  } @else if $direction==y {
+    top: 50%;
+    transform: translateY(-50%);
+  }
+}
+
+// Clearfix
+@mixin clearfix {
+  &::after {
+    content: "";
+    display: block;
+    clear: both;
+  }
+}
